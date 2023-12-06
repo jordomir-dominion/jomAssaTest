@@ -11,7 +11,6 @@ namespace Assa.Infrastructure.Data.Context
         public AssaDbContext(DbContextOptions<AssaDbContext> options)
             : base(options)
         {
-            Database.Migrate();
         }
 
         #endregion Public Constructors
