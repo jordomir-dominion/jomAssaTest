@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  postgres:
+    image: jom-asssa-postgres-image
+    container_name: jom-asssa-postgres-container
+    build:
+        context: ./ # Specify the path to your API project
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: testAssa
+      POSTGRES_USER: jordomir
+      POSTGRES_PASSWORD: Jordomir!.
+  myapi:
+    image: jom-assa-api-image
+    container_name: jom-asssa-api-container
+    build:
+        context: . 
+        dockerfile: Assa.ApiResources/Dockerfile # Specify the path to your API project
+    ports:
+        - "5000:80"
+    depends_on:
+        - postgres
