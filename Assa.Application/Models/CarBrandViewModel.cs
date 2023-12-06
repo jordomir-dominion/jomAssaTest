@@ -1,7 +1,7 @@
 ﻿namespace Assa.Application.Models
 {
     /// <summary>
-    /// Data transfer object for the model <see cref="Domain.Entities.Model.CarBrand"/>
+    /// Data transfer object for the model <see cref="Entities.Model.CarBrand"/>
     /// </summary>
     public class CarBrandViewModel
     {
