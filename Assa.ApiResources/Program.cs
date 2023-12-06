@@ -1,5 +1,5 @@
 using Assa.ApiResources.SeedData;
-using Assa.Domain.Entities;
+using Assa.Application.Extensions;
 using Assa.Infrastructure.Data.Context;
 using Assa.Infrastructure.Data.Extensions;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddAssaDbContext(builder.Configuration);
+builder.Services.AddAssaApplication();
 
 var app = builder.Build();
 
@@ -38,5 +39,4 @@ void SeedData(WebApplication webApplication)
         db.Database.Migrate();
         db.SeedData(CarBrandSeedData.GetData(DateTime.Now));
     }
-
 }
