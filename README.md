@@ -9,6 +9,8 @@ Este proyecto utiliza Docker y herramientas de cobertura de código para facilit
 docker-compose up --build -d
 ```
 
+Asegúrate de revisar el archivo `docker-compose.yml` para conocer los puertos configurados para la aplicación.
+
 ## Ejecución de Pruebas y Generación de Cobertura
 
 ```bash
@@ -37,3 +39,9 @@ reportgenerator "-reports:Assa.Application.Test/TestResults/*/coverage.opencover
   </DataCollectionRunSettings>
 </RunSettings>
 ```
+
+## Rutas Importantes
+
+- **Swagger**: La documentación de la API está disponible en la ruta `http://localhost:{PUERTO_CONFIGURADO}/swagger/index.html`.
+  
+Asegúrate de reemplazar `{PUERTO_CONFIGURADO}` con el puerto específico configurado en tu archivo `docker-compose.yml`.
