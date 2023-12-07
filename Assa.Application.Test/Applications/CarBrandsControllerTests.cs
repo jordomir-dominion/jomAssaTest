@@ -4,7 +4,7 @@ using Assa.Application.Services.Controllers;
 using Assa.Application.Test.SeedData;
 using Moq;
 
-namespace Assa.Application.Test
+namespace Assa.Application.Test.Applications
 {
     public class CarBrandsControllerTests
     {

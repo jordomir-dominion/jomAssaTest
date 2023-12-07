@@ -5,7 +5,7 @@ using Assa.Domain.Base.Repositories;
 using Assa.Domain.Entities;
 using Moq;
 
-namespace Assa.Application.Test
+namespace Assa.Application.Test.ApiResources
 {
     public class CarBrandControllerServiceTests
     {
@@ -29,12 +29,12 @@ namespace Assa.Application.Test
             Assert.NotNull(result);
 
             var carBrandViewModels = Assert.IsType<List<CarBrandViewModel>>(result);
-            Assert.Equal(3, carBrandViewModels.Count);  
-            
+            Assert.Equal(3, carBrandViewModels.Count);
+
             Assert.Equal("hyundai", carBrandViewModels[0].Code);
             Assert.Equal("Hyundai", carBrandViewModels[0].Name);
             Assert.Equal(1, carBrandViewModels[0].Id);
-            
+
         }
 
         #endregion Public Methods

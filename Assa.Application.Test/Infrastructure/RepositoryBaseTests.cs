@@ -5,7 +5,7 @@ using Assa.Infrastructure.Data.Extensions;
 using Assa.Infrastructure.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace Assa.Application.Test
+namespace Assa.Application.Test.Infrastructure
 {
     public class RepositoryBaseTests
     {
@@ -25,8 +25,8 @@ namespace Assa.Application.Test
                 .Options;
 
             // Crea un nuevo contexto de base de datos en memoria para cada prueba
-            var date = DateTime.Now;
             dbContext = new AssaDbContext(dbContextOptions);
+            var date = DateTime.Now;
             dbContext.SeedData(CarBrandSeedData.GetData(date));
         }
 
@@ -37,6 +37,9 @@ namespace Assa.Application.Test
         [Fact]
         public void CarBrands_DbContext_ShouldBePopulated()
         {
+            var date = DateTime.Now;
+            dbContext.SeedData(CarBrandSeedData.GetData(date));
+
             // Arrange
             var carBrandsRepository = new RepositoryBase<CarBrand>(dbContext);
 
